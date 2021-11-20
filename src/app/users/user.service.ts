@@ -30,7 +30,6 @@ export class UserService {
 
   socket = io(this.url);
 
-  
     public sendMessage(message:any) {
       this.socket.emit('message', message);
     }
