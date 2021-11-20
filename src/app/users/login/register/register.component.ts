@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     password: '',
     file: File
   }
-  progress: number = 0;
+  progress: number 
     
   url:string
 
@@ -47,6 +47,10 @@ export class RegisterComponent implements OnInit {
 
   submit(){
     
+      if(this.request.name==='' && this.request.email==='' && this.request.password==='' ){
+        return alert("Preencha todos seus dados!")
+      }
+
       this.userService.createLogin(this.request).subscribe((event: HttpEvent<any>)=>{
         switch (event.type) {
           
