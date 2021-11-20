@@ -1,13 +1,13 @@
 <h1>Chat</h2>
 
-~~~
+
 <hr>
 
 <h2>-login</h2>
 
 ![login](https://user-images.githubusercontent.com/88890771/142024954-fb80b362-8b58-4a9a-b64e-d789ddb300c6.png)
 
-<br>
+
 
 <h2>-Cadastro</h2>
 
