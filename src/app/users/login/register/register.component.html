@@ -1,0 +1,22 @@
+<div class="container">
+    <h1 style="color:#7b1fa2 ;">Tindin<span style="color: #69f0ae;">Chat</span></h1>
+    <h2>Faça seu cadastro</h2>
+    <div  *ngIf="progress > 0">
+        <mat-progress-bar [color]="color" mode="indeterminate" ></mat-progress-bar>
+    </div>
+    <div>
+        <div *ngIf="url" class="profile-photo" style="background-image: url({{url}});"></div>
+        <mat-icon *ngIf="!url" color="primary" class="icon">account_circle</mat-icon>
+
+    </div>
+    <button  (click)="hiddenfileinput.click()"  class="profile-button">	<mat-icon class="icon2" color="basic" >camera_enhance</mat-icon></button>
+
+
+    <input type="text" placeholder="Digite seu nome" [(ngModel)]="request.name" >
+    <input type="email" placeholder="Digite seu email" [(ngModel)]="request.email" >
+    <input type="password" placeholder="Digite sua  senha" [(ngModel)]="request.password" >
+    <input #hiddenfileinput type="file"  name="avatar" placeholder="Esolha sua foto" (change)="onFileSelected($event)" style="display: none" >
+    <button mat-raised-button color="primary" (click)="submit()" >Cadastrar</button>
+    
+    
+</div>

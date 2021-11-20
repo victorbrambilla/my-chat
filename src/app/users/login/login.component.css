@@ -1,0 +1,47 @@
+.container{
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin:100px auto;
+    max-width: 300px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(22, 22, 22, 0.12);
+}
+
+.container h1{
+    font-weight: bold;
+}
+
+.container h2{
+    font-weight: normal;
+}
+
+.container input, button{
+    margin-top: 30px;
+}
+
+.container input{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button{
+    border-radius: 5px;
+}
+
+::placeholder{
+    text-align: center;
+}
+
+p{
+    margin-top: 30px;
+    font-weight: 500;
+}
+
+a{
+    color: #7b1fa2;
+    font-weight: bolder;
+}
+

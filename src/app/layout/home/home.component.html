@@ -1,0 +1,21 @@
+<header >
+  
+  <div class="logo">
+    <span style="color:#7b1fa2 ;">Tindin<span style="color: #69f0ae;">Chat</span></span>
+
+  </div>
+ 
+  <div class="item">
+    <span style="color:#acacac ;" >Olá, <span style="color:#7b1fa2 ;">{{user}}</span></span>
+    <div class="profile-photo" style="background-image: url({{avatar}});"></div>
+    <i (click)="logout()" class="material-icons">logout</i>
+  </div>
+
+    
+</header>
+<main>
+    <router-outlet ></router-outlet>
+
+</main>
+ 
+

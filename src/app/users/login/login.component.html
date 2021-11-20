@@ -1,0 +1,10 @@
+<div class="container">
+    <h1 style="color:#7b1fa2 ;">Tindin<span style="color: #69f0ae; " >Chat</span></h1>
+
+    <h2>Faça seu login</h2>
+    <input type="email" placeholder="Digite seu email " [(ngModel)]="request.email" class="validate">
+    <input type="password" placeholder="Digite sua  senha" [(ngModel)]="request.password" class="validate">
+    <button mat-raised-button color="primary" (click)="login()">Entrar</button>
+    <p>Novo na Tindin?<a routerLink="register" > Cadastrar</a></p>
+</div>
+

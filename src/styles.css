@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@mdi/font/css/materialdesignicons.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+h1{
+    letter-spacing: -1.5px;
+}
+
+
+html, body { 
+    height: 100%;
+    background-color: rgb(231, 227, 227);
+
+}
+body { margin: 0; font-family: Roboto}
+
+.mat-paginator-range-actions{
+    display: none !important;
+    background-color: white;
+}
+
+input:focus{
+    outline-color: #7b1fa2;
+}
+ 
+.route-container {
+    position:relative;
+}
+.route-container>* {
+    display:block;
+}

@@ -1,0 +1,56 @@
+<div class="containers">
+    <div class="container-messages">
+        <div  class="list-messages" >
+            <li *ngFor="let message of messageList[0]" class="message" >
+                
+                <div class="foto" style="background-image: url({{message.message.user}});"></div>
+                <div class="container-msgs">
+                    <span><b>{{message.message.name}}, </b>{{message.message.date?.msg}} - {{message.message.date?.hour}}</span>
+                    <div *ngIf="message.message.message" class="text-message">{{message.message.message}}</div>
+                    <img *ngIf="message.message.img" src="{{message.message.img}}" style="width: 100px; height: auto; margin-top: 10px;">
+                </div>
+                
+            </li>  
+
+           
+        </div>
+        
+        <div class="buttons">
+            <button class="container-photoButton"  (click)="hiddenfileinput.click()"  mat-mini-fab color="accent">
+                <mat-icon class="send-button" color="basic" >camera_enhance</mat-icon>
+            </button>
+
+            <input [(ngModel)]="newMessage.message" (keyup)="$event.keyCode == 13 && sendMessage()" placeholder="Mensagem"/>
+            
+            <button class="container-sendButton" mat-mini-fab color="primary" >
+                <mat-icon class="send-button" (click)="sendMessage()">send</mat-icon>
+            </button>
+        </div>
+      
+    
+    </div>
+    
+    
+    <div class="container-user">
+        <div class="list-users" >
+            <h4>Usuários conectados</h4>
+            
+            <div *ngFor="let user of userlist[0]" style="margin-top: 5px;"  class="users">
+                
+                <li class="user">
+                    <div class="foto" style="background-image: url({{user.avatar}});"></div>
+                    
+                    <div>
+                        {{user.name}}
+                    </div>
+                </li>
+            </div>
+            
+            
+            
+        </div>
+        
+    </div>
+
+   
+    <input  #hiddenfileinput type="file" name="foto"  (change)="onFileSelected($event)" style="display: none;" >
