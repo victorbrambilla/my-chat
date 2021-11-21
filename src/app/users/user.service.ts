@@ -16,7 +16,7 @@ export class UserService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 
-  private url = "http://3.144.187.146:3000"
+  private url = "http://3.137.213.29:3000/login"
 
   public message$: BehaviorSubject<string> = new BehaviorSubject('');
 
