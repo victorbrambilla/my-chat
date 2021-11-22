@@ -10,8 +10,8 @@ import { UserService } from 'src/app/users/user.service';
 })
 export class HomeComponent implements OnInit {
 
-    avatar: any= localStorage.getItem("avatar")
-    user: any= localStorage.getItem("name")
+    avatar: any= sessionStorage.getItem("avatar")
+    user: any= sessionStorage.getItem("name")
 
   constructor(private userService: UserService) { }
 

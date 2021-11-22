@@ -27,7 +27,10 @@
             </button>
         </div>
       
-    
+        <div class="progress form-group" *ngIf="progress" style="margin-top: 10px;">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
+            </div>
+        </div>
     </div>
     
     
@@ -53,4 +56,4 @@
     </div>
 
    
-    <input  #hiddenfileinput type="file" name="foto"  (change)="onFileSelected($event)" style="display: none;" >
+    <input  #hiddenfileinput type="file" name="foto"   (change)="onFileSelected($event)" style="display: none;" >

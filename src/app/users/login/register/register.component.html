@@ -15,7 +15,7 @@
     <input type="password" placeholder="Digite sua  senha" [(ngModel)]="request.password" >
     <input #hiddenfileinput type="file"  name="avatar" placeholder="Esolha sua foto" (change)="onFileSelected($event)" style="display: none" >
     <button mat-raised-button color="primary" (click)="submit()" >Cadastrar</button>
-    <div class="progress form-group" *ngIf="progress" style="margin-bottom: 10px;">
+    <div class="progress form-group" *ngIf="progress" style="margin-top: 10px;">
         <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
         </div>
     </div>
