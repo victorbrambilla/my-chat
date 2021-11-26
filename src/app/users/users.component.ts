@@ -75,7 +75,10 @@ export class  UsersComponent implements OnInit {
       this.newMessage.date=this.userService.getDateTime(new Date())
       this.userService.sendMessage(this.newMessage);
       this.newMessage.message = '';
-      this.scroll() 
+      setTimeout(()=>{
+        const ul= document.querySelector('.list-messages')
+        ul!.scrollTop=ul!.scrollHeight
+      },100)
     }
     
     
@@ -88,7 +91,6 @@ export class  UsersComponent implements OnInit {
   onFileSelected(event :any){
     
     this.newMessage.file=event.target.files[0];
-
     this.userService.postPhoto(this.newMessage).subscribe((event: HttpEvent<any>)=>{
       switch (event.type) {
           

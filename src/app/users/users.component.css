@@ -39,7 +39,7 @@ main{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
     padding: 5px 20px;
-    
+    word-break: break-word;
 }
 .foto{
     background-size: cover;

@@ -56,6 +56,18 @@ export class UserService {
       return  this.user$.asObservable();
     }
 
+    public postPhoto(message: any){
+      const formData = new FormData();
+      formData.append("name", message.name)
+      formData.append("user", message.user)
+      formData.append("message", message.message)
+      formData.append("foto", message.file)
+      return this.http.post<any>(`${this.url}/photo`, formData, {
+        reportProgress: true,
+        observe: 'events'
+      })
+      
+    }
     
     
  
@@ -88,19 +100,7 @@ export class UserService {
       observe: 'events'
   })}
 
-  public postPhoto(message: any){
-    const formData = new FormData();
-    formData.append("name", message.name)
-    formData.append("user", message.user)
-    formData.append("message", message.message)
-    formData.append("foto", message.file)
-    return this.http.post<any>(`${this.url}/photo`, formData, {
-      reportProgress: true,
-      observe: 'events'
-    })
-    
-  }
-  
+ 
 
   public getAuthorizationToken() {
     const token = sessionStorage.getItem("token");
