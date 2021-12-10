@@ -68,6 +68,13 @@ export class  UsersComponent implements OnInit {
 
   }
 
+  scroll2(){
+    setTimeout(()=>{
+      const ul= document.querySelector('.list-messages')
+      ul!.scrollTop=ul!.scrollHeight
+    },200)
+
+  }
 
 
   sendMessage() {
@@ -75,10 +82,7 @@ export class  UsersComponent implements OnInit {
       this.newMessage.date=this.userService.getDateTime(new Date())
       this.userService.sendMessage(this.newMessage);
       this.newMessage.message = '';
-      setTimeout(()=>{
-        const ul= document.querySelector('.list-messages')
-        ul!.scrollTop=ul!.scrollHeight
-      },100)
+      this.scroll2()
     }
     
     

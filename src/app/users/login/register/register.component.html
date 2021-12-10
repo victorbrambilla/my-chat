@@ -5,16 +5,26 @@
     <div>
         <div *ngIf="url" class="profile-photo" style="background-image: url({{url}});"></div>
         <mat-icon *ngIf="!url" color="primary" class="icon">account_circle</mat-icon>
-
+        
     </div>
+
     <button  (click)="hiddenfileinput.click()"  class="profile-button">	<mat-icon class="icon2" color="basic" >camera_enhance</mat-icon></button>
+    
 
+    <form (ngSubmit)="submit()" #f="ngForm">
+        <input #name="ngModel" name="name" type="text" placeholder="Digite seu nome" [(ngModel)]="request.name" required >
+        <span class="alert" *ngIf="!name.valid && name.touched">Digite um nome válido</span>
 
-    <input type="text" placeholder="Digite seu nome" [(ngModel)]="request.name" >
-    <input type="email" placeholder="Digite seu email" [(ngModel)]="request.email" >
-    <input type="password" placeholder="Digite sua  senha" [(ngModel)]="request.password" >
-    <input #hiddenfileinput type="file"  name="avatar" placeholder="Esolha sua foto" (change)="onFileSelected($event)" style="display: none" >
-    <button mat-raised-button color="primary" (click)="submit()" >Cadastrar</button>
+        <input #email="ngModel" name="email" type="email" placeholder="Digite seu email" [(ngModel)]="request.email" required email>
+        <span class="alert" *ngIf="!email.valid && email.touched">Digite um email válido!</span>
+
+        <input #password="ngModel" name="password" type="password" placeholder="Digite sua  senha" [(ngModel)]="request.password" required>
+        <span class="alert" *ngIf="!password.valid && password.touched">Digite uma senha válida!</span>
+
+        <input #hiddenfileinput  type="file"  name="avatar" placeholder="Esolha sua foto" (change)="onFileSelected($event)" style="display: none" required>
+        <button mat-raised-button color="primary"  [disabled]="!f.valid" (click)="submit()" >Cadastrar</button>
+    </form>
+    
     <div class="progress form-group" *ngIf="progress" style="margin-top: 10px;">
         <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width.%]="progress">
         </div>

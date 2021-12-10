@@ -2,9 +2,16 @@
     <h1 style="color:#7b1fa2 ;">My<span style="color: #69f0ae; " >Chat</span></h1>
 
     <h2>Faça seu login</h2>
-    <input type="email" placeholder="Digite seu email " [(ngModel)]="request.email" class="validate">
-    <input type="password" placeholder="Digite sua  senha" [(ngModel)]="request.password" class="validate">
-    <button mat-raised-button color="primary" (click)="login()">Entrar</button>
+    <form (ngSubmit)="login()" #f="ngForm">
+        <input #email="ngModel" name="email" type="email" placeholder="Digite seu email " [(ngModel)]="request.email" class="validate" required email>
+        <span class="alert" *ngIf="!email.valid && email.touched">Digite um email válido!</span>
+
+        <input #password="ngModel" name="password" type="password" placeholder="Digite sua  senha" [(ngModel)]="request.password" class="validate" required>
+        <span class="alert" *ngIf="!password.valid && password.touched">Digite uma senha válida!</span>
+
+        <button mat-raised-button color="primary" (click)="login()"  [disabled]="!f.valid">Entrar</button>
+    </form>
+    
     <p>Novo na Tindin?<a routerLink="register" > Cadastrar</a></p>
 </div>
 
